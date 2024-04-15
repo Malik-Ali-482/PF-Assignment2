@@ -2,18 +2,48 @@
 using namespace std;
 
 int main() {
-    int num, sum = 0;
-    cout << "To exit enter a negative number\n\n";
-    cout << "Enter a number: ";
-    cin >> num;
+    int num;
+    int count = 0;
+    int sum = 0;
+    int max = 0;
+    int min = INT_MAX;
+    int check;
 
-    do  {
-        sum += num;
+    cout << "Enter positive integers for calculation.\n Enter -1 to terminate.\n";
 
-        cout << "Enter a number: ";
+    do {
+        cout << "Enter a positive integer: ";
         cin >> num;
+
+        if (num == -1) {
+            break; 
+        }
+
+        else if (num < 0) {
+            cout << "Enter a positive number\n";
+        }
+        else {
+            count++;
+            sum += num;
+        }
+
+        if (num > max) {
+            max = num;
+        }
+
+        if (num < min) {
+            min = num;
+            
+        }
         
-    } while (num >= 0);
-    cout << "Sum of all entered numbers is = " << sum << endl;
-     return 0;
+    } while (num != -1);
+
+        double average = sum / count;
+        cout << "Count of positive integers: " << count << endl;
+        cout << "Maximum value: " << max << endl;
+        cout << "Minimum value: " << min << endl;
+        cout << "Average value: " << average << endl;
+    
+
+    return 0;
 }
