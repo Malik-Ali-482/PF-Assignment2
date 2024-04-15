@@ -1,13 +1,18 @@
 #include <iostream>
 using namespace std;
-
 int main()
 {
-    int i = 1;
-    do {
-        cout << i << endl;
-        i++;
-    } 
-    while (i <= 10);
-    return 0;
+	int num, i = 0, Average,sum = 0;
+	const int limitation = 10;
+	do {
+		
+		cout << "Enter number " << i + 1 << " for calculation.\n";
+		cin >> num;
+		i++;
+		sum += num;
+	} while (i < limitation );
+
+	Average = sum / 10;
+	cout << "The average of the ten numbers is: " << Average << endl;
+	return 0;
 }
